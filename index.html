@@ -192,8 +192,8 @@
 </body>
 <script>
     let datetxt = "23 Maret 2026";
-    let datatxtletter = "My Babyyy. You are a very special girl. I always silently thank you for coming into my life. Today, I wish we can together forever. You really means a lot to me and i want we can happy together Novi Wanti. Happy Monthversary.💕💕💕";
     let titleLetter = "To My Babyy Novi Wanti";
+    let datatxtletter = "My Babyyy. You are a very special girl. I always silently thank you for coming into my life. Today, I wish we can together forever. You really means a lot to me and i want we can happy together Novi Wanti. Happy Monthversary.💕💕💕";
     let charArrDate = datetxt.split('');
     let charArrDateLetter = datatxtletter.split('');
     let charArrTitle = titleLetter.split('');
@@ -220,11 +220,25 @@
 
     var intervalContent;
     var intervalTitle;
-    $("#btn__letter, #btn__letter2").on("click", function () {
-        $(".box__letter").slideDown()
+
+    // btn__letter opens the mailbox box
+    $("#btn__letter").on("click", function () {
+        $(".boxMail").addClass("active");
+        $(".mail").addClass("active");
+        // hide letter box if open
+        $(".box__letter").slideUp();
+        $(".letter__border").slideUp();
+    });
+
+    // btn__letter2 opens the animated letter box
+    $("#btn__letter2").on("click", function () {
+        $(".boxMail").removeClass("active");
+        $(".mail").removeClass("active");
+
+        $(".box__letter").slideDown();
         setTimeout(function () {
             $(".letter__border").slideDown();
-        }, 1000)
+        }, 1000);
         setTimeout(function () {
             intervalTitle = setInterval(function () {
                 if (currentIndexTitle < charArrTitle.length) {
