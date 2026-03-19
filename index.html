@@ -189,8 +189,27 @@
         </div>
     </div>
 
+    <!-- Background music -->
+    <audio id="bg-music" src="./images/musik.mp3" loop muted></audio>
+
 </body>
 <script>
+    const bgMusic = document.getElementById('bg-music');
+    function startMusic() {
+        if (!bgMusic) return;
+        if (bgMusic.paused) {
+            bgMusic.play().catch(() => {});
+        }
+        bgMusic.muted = false;
+        bgMusic.volume = 0.5;
+    }
+
+    // optional helper so first user click likely unblocks
+    document.body.addEventListener('click', function userGestureMusic() {
+        startMusic();
+        document.body.removeEventListener('click', userGestureMusic);
+    });
+
     let datetxt = "23 Maret 2026";
     let titleLetter = "To My Babyy Novi Wanti";
     let datatxtletter = "My Babyyy. You are a very special girl. I always silently thank you for coming into my life. Today, I wish we can together forever. You really means a lot to me and i want we can happy together Novi Wanti. Happy Monthversary.💕💕💕";
@@ -223,6 +242,7 @@
 
     // btn__letter opens the mailbox box
     $("#btn__letter").on("click", function () {
+        startMusic();
         $(".boxMail").addClass("active");
         $(".mail").addClass("active");
         // hide letter box if open
@@ -232,6 +252,7 @@
 
     // btn__letter2 opens the animated letter box
     $("#btn__letter2").on("click", function () {
+        startMusic();
         $(".boxMail").removeClass("active");
         $(".mail").removeClass("active");
 
