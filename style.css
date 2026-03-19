@@ -185,8 +185,11 @@ body {
 }
 .date__of__birth, .name{
     display: flex;
-    justify-content:space-around;
+    justify-content: center;
     align-items: center;
+    flex-wrap: nowrap;
+    white-space: nowrap;
+    gap: 8px;
     background-color: var(--color-text-pink);
     border-radius: 50px;
     margin-top: 20px;
@@ -776,9 +779,12 @@ body {
     }
 
     .name {
-        position: absolute;
+        position: relative;
+        white-space: nowrap;
+        flex-wrap: nowrap;
         padding: 0px 3px;
-        bottom: -6px;
+        bottom: auto;
+        margin-top: 10px;
         border: 3px solid var(--color-black);
     }
 
