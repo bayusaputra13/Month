@@ -75,7 +75,7 @@ body {
     transform: scale(0);
     animation: scaleCricle 2s 16s forwards ease-in-out;
 }
-#btn__letter{
+#btn__letter, #btn__letter2 {
     position: relative;
     margin-top: 30px;
     background-color: var(--color-text-pink);
@@ -93,13 +93,16 @@ body {
     transform: scale(1);
     transition: all .5s ease-in-out;
 }
-#btn__letter:active{
+#btn__letter:active,
+#btn__letter2:active {
     transform: scale(0.7);
 }
-#btn__letter i{
+#btn__letter i,
+#btn__letter2 i {
     margin-left: 5px;
 }
-#btn__letter:hover{
+#btn__letter:hover,
+#btn__letter2:hover {
     border-color: var(--color-heart);
     background-color: var(--color-heart);
     color: #fff;
@@ -795,6 +798,108 @@ body {
     }
 
 
+}
+
+/* additional responsive improvements (tablet/mobile) */
+@media (max-width: 980px) {
+    .content {
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+        padding-top: 2rem;
+    }
+
+    .content .left,
+    .content .right {
+        width: 100%;
+    }
+
+    .content .right .image {
+        width: 280px;
+        height: 280px;
+    }
+
+    .title {
+        font-size: 2rem;
+    }
+
+    .title .hat {
+        top: -210px;
+        right: 25px;
+        transform: rotate(-30deg);
+    }
+
+    .title .happy,
+    .title .birthday {
+        font-size: 1.8rem;
+    }
+
+    .text__cricle {
+        width: 90px;
+        height: 90px;
+    }
+
+    .text__cricle span {
+        font-size: 0.6rem;
+        transform-origin: 0 38px;
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        font-size: 14px;
+    }
+
+    .content .right .image {
+        width: 180px;
+        height: 180px;
+    }
+
+    .title {
+        font-size: 1.3rem;
+    }
+
+    .title .happy,
+    .title .birthday {
+        font-size: 1.1rem;
+    }
+
+    .text__cricle {
+        width: 70px;
+        height: 70px;
+        border-width: 4px;
+    }
+
+    .title .hat {
+        top: -140px;
+        right: 12px;
+        transform: rotate(-30deg);
+    }
+
+    .text__cricle span {
+        font-size: 0.5rem;
+        transform-origin: 0 30px;
+    }
+
+    .smiley__icon {
+        position: relative;
+        bottom: auto;
+        left: auto;
+        margin: 0.5rem auto;
+        transform: scale(0.85);
+    }
+
+    .smiley__icon img {
+        width: 70px;
+        height: auto;
+    }
+
+    .cricle {
+        position: relative;
+        top: auto;
+        right: auto;
+        margin: 1rem auto;
+    }
 }
 
 
